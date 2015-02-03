@@ -1,4 +1,4 @@
-### Malá násobilka
+# Malá násobilka
 
 Autor: Tibor Repček
 
