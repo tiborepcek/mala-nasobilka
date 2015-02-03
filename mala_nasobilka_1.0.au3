@@ -1,3 +1,9 @@
+#cs
+Malá násobilka 1.0 napísaná v AutoIt 3
+Autor: Tibor Repček
+Web: http://tiborepcek.com/mala-nasobilka/
+#ce
+
 #NoTrayIcon
 Opt("GUICloseOnESC", 0)
 
