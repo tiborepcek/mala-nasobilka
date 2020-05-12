@@ -1,22 +1,27 @@
 #cs
-Malá násobilka 1.0 napísaná v AutoIt 3
+Malá násobilka 1.1 napísaná v AutoIt 3
 Autor: Tibor Repček
-Web: http://tiborepcek.com/mala-nasobilka/
+Web: https://tiborepcek.com/mala-nasobilka/
 #ce
 
 #NoTrayIcon
 Opt("GUICloseOnESC", 0)
+
+#pragma compile(ProductName, Malá násobilka)
+#pragma compile(ProductVersion, 1.1)
+#pragma compile(FileVersion, 1.1.0.0)
+#pragma compile(CompanyName, 'tiborepcek.com')
+#pragma compile(FileDescription, Automatické príklady malej násobilky. Viac na https://tiborepcek.com/mala-nasobilka/)
 
 #include <ButtonConstants.au3>
 #include <EditConstants.au3>
 #include <GUIConstantsEx.au3>
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
-
 $Form = GUICreate("Malá násobilka", 493, 222, -1, -1)
 $labelNadpis = GUICtrlCreateLabel("Malá násobilka", 15, 15, 460, 30, BitOR($SS_CENTER,$WS_GROUP))
 GUICtrlSetFont(-1, 14, 800, 0, "Verdana")
-$labelPodnadpis = GUICtrlCreateLabel("verzia: 1.0, autor: Tibor Repček (tiborepcek.com)", 15, 43, 460, 22, BitOR($SS_CENTER,$WS_GROUP))
+$labelPodnadpis = GUICtrlCreateLabel("verzia: 1.1, autor: Tibor Repček (tiborepcek.com)", 15, 43, 460, 22, BitOR($SS_CENTER,$WS_GROUP))
 GUICtrlSetFont(-1, 10, 400, 0, "Verdana")
 $labelCisloVlavo = GUICtrlCreateLabel(Random(0, 10, 1), 43, 110, 35, 22, BitOR($SS_CENTER,$WS_GROUP))
 GUICtrlSetFont(-1, 12, 800, 0, "Verdana")
@@ -58,7 +63,7 @@ While 1
 	Switch $nMsg
 		Case $GUI_EVENT_CLOSE
 			Exit
-		
+
 		Case $btnOverit
 			GUICtrlSetState($btnOverit, $GUI_DISABLE)
 			GUICtrlSetState($btnNovyPriklad, $GUI_FOCUS)
@@ -71,7 +76,7 @@ While 1
 				GUICtrlSetBkColor($inputVysledok, 0xff0000)
 				GUICtrlSetData($labelStatNespravneCislo, GUICtrlRead($labelStatNespravneCislo) + 1)
 			EndIf
-		
+
 		Case $btnVypocitat
 			GUICtrlSetState($btnVypocitat, $GUI_DISABLE)
 			GUICtrlSetState($btnOverit, $GUI_DISABLE)
@@ -80,7 +85,7 @@ While 1
 			GUICtrlSetColor($inputVysledok, 0xffffff)
 			GUICtrlSetData($inputVysledok, GUICtrlRead($labelCisloVlavo) * GUICtrlRead($labelCisloVpravo))
 			GUICtrlSetData($labelStatPocitacCislo, GUICtrlRead($labelStatPocitacCislo) + 1)
-		
+
 		Case $btnNovyPriklad
 			GUICtrlSetState($btnOverit, $GUI_ENABLE)
 			GUICtrlSetState($btnVypocitat, $GUI_ENABLE)
@@ -90,7 +95,7 @@ While 1
 			GUICtrlSetColor($inputVysledok, 0x000000)
 			GUICtrlSetData($inputVysledok, "")
 			GUICtrlSetState($inputVysledok, $GUI_FOCUS)
-		
+
 
 	EndSwitch
 WEnd
