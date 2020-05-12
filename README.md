@@ -2,7 +2,7 @@
 
 Autor: Tibor Repček
 
-Web: http://tiborepcek.com/mala-nasobilka/
+Web: https://tiborepcek.com/mala-nasobilka/
 
 ![Malá násobilka](mala_nasobilka_1.1.png "Malá násobilka")
 
